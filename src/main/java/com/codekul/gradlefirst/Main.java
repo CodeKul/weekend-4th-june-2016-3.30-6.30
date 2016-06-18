@@ -5,9 +5,11 @@
  */
 package com.codekul.gradlefirst;
 
+import com.codekul.firstgradle.collections.MyCollection;
 import com.codekul.gradlefirst.abstractclasses.Animal;
 import com.codekul.gradlefirst.abstractclasses.Tiger;
 import com.codekul.gradlefirst.exceptionhandling.Watch;
+import com.codekul.gradlefirst.generics.Generics;
 import com.codekul.gradlefirst.infetrfaces.Bike;
 import com.codekul.gradlefirst.infetrfaces.GpsListener;
 import com.codekul.gradlefirst.infetrfaces.Human;
@@ -34,7 +36,7 @@ public class Main {
      */
     public static void main(String[] args/* command line arguments */) { // java Main 10 20 30 -> Main.main({});
        
-        exceptionHandling();
+      collections();
     }
     
     public static void languageBasics(){
@@ -124,5 +126,25 @@ public class Main {
         } catch (Exception ex) {
             System.out.println(""+ex.getMessage());
         }
+    }
+    
+    public static void generics(){
+        
+        //in generics class name always proceded by <>
+        Generics<Integer> genInt = new Generics<Integer>();
+        genInt.setAnyType(10);
+        genInt.getAnyType();
+        
+        Generics<String> genString =
+                new Generics<String>();
+        genString.setAnyType("codekul");
+        genString.getAnyType();
+    }
+    
+    public static void collections(){
+        
+        MyCollection collection =
+                new MyCollection();
+        collection.howDoIUseMap();
     }
 }
